@@ -9,6 +9,7 @@
 
     <modules>
         <module>docker</module>
+        <module>core-java</module>
     </modules>
 
 </project>
