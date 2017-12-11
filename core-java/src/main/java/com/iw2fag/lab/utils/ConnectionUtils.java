@@ -142,7 +142,7 @@ public class ConnectionUtils {
         HttpsURLConnection connection = (HttpsURLConnection) openConnection(proxyInfo, url);
         connection.setSSLSocketFactory(sc.getSocketFactory());
         connection.setHostnameVerifier(new HostnameVerifier() {
-            
+
             public boolean verify(String s, SSLSession sslSession) {
                 return true;
             }
