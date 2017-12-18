@@ -1,4 +1,4 @@
-package com.iw2fag.lab.algorithm;
+package com.iw2fag.lab.algorithm.sort;
 
 /**
  * Created with IntelliJ IDEA.

@@ -1,4 +1,4 @@
-package com.iw2fag.lab.algorithm;
+package com.iw2fag.lab.algorithm.blockingQueue;
 
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.ReentrantLock;
