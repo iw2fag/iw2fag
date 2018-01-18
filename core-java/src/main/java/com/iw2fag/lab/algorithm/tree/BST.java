@@ -96,18 +96,25 @@ public class BST {
         return floor(this.root, base);
     }
 
-    private Node floor(Node root, int base) {
+    private Node floor(Node x, int base) {
 
-        if (base == root.value) {
-            return root;
-        } else if (base < root.value) {
-            return floor(root.left, base);
-        } else {
-            if (root.right == null) {
-                return root;
-            }
-            return floor(root.right, base);
+        if (x == null) {
+            return null;
         }
+
+        if (base == x.value) {
+            return x;
+        }
+        if (base < x.value) {
+            return floor(x.left, base);
+        }
+
+        Node t = floor(x.right, base);
+
+        if (t != null) {
+            return t;
+        }
+        return x;
     }
 
     public Node deleteMin() {
