@@ -1,0 +1,23 @@
+version: '2'
+services:
+  skeleton:
+    image: srf/skeleton
+    container_name: skeleton
+    expose:
+      - "8080"
+      - "8000"
+    ports:
+      - "8080:8080"
+      - "8000:8000"
+    environment:
+      - JAVA_OPTIONS=-Dspring.profiles.active=saas -Dfile.encoding=UTF-8 -Dskeleton.home=/usr/local/resource -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=8000
+      - SECURITY_SERVICE_ADDR=mocks
+      - SECURITY_SERVICE_PORT=8081
+      - DB_ADDR=db
+      - DB_PORT=5432
+    volumes:
+      - /c/Users/logs/iw2fag:/usr/local/resource/log
+
+networks:
+  local:
+    driver: bridge
