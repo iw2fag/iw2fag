@@ -1,12 +1,12 @@
 #!/bin/bash
 #set -e
 psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" <<-EOSQL
-    CREATE DATABASE iw2fagDB;
+    CREATE DATABASE skeleton;
 
     CREATE USER docker PASSWORD 'password';
-    GRANT ALL PRIVILEGES ON DATABASE iw2fagDB TO docker;
+    GRANT ALL PRIVILEGES ON DATABASE skeleton TO docker;
 
-    \connect iw2fagDB;
+    \connect skeleton;
 
     CREATE TABLE users(id BIGINT PRIMARY KEY NOT NULL, status CHARACTER VARYING(255));
 

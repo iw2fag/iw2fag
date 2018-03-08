@@ -16,7 +16,6 @@ import org.owasp.validator.html.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
@@ -85,7 +84,7 @@ public class InputValidationUtils {
                     result = result.trim();
 
                     if(cr.getNumberOfErrors() != 0) {
-                        ArrayList errorMessages = cr.getErrorMessages();
+                        List errorMessages = cr.getErrorMessages();
                         for(Object errorMessage : errorMessages) {
                             logger.error("Antisamy error message: " + errorMessage.toString());
                         }

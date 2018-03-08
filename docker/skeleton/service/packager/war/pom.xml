@@ -83,6 +83,11 @@
             <artifactId>logging</artifactId>
             <version>${project.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.liquibase</groupId>
+            <artifactId>liquibase-core</artifactId>
+            <version>3.3.2</version>
+        </dependency>
     </dependencies>
 
     <profiles>

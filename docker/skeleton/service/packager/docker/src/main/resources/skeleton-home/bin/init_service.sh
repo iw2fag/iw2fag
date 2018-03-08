@@ -16,4 +16,4 @@ wait_db
 if [ $? -ne 0 ] ; then
     echo "Init service failed."
     exit -1
-fi
+fiw

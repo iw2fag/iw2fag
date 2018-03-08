@@ -20,5 +20,6 @@ source $BIN_DIR/setenv_jetty.sh
 
 echo JETTY_HOME= $JETTY_HOME
 echo JETTY_BASE= $JETTY_BASE
+echo SKELETON_HOME= ${SKELETON_HOME}
 
 exec java $JAVA_OPTIONS -jar $JETTY_HOME/start.jar --lib=${SKELETON_HOME}/conf 2>&1

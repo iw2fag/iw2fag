@@ -30,12 +30,12 @@ public class WebContextConfiguration extends WebMvcConfigurerAdapter {
     @Autowired
     private Environment environment;
 
-    @Bean //temp solution since cache was not recognize
+ /*   @Bean //temp solution since cache was not recognize
     public GuavaCacheManager cacheManager(@Value("${spring.cache.cache-names}") String cacheNames, @Value("${spring.cache.guava.spec}") String cacheBuilderSpecification) {
         GuavaCacheManager guavaCacheManager = new GuavaCacheManager(cacheNames.split(","));
         guavaCacheManager.setCacheBuilderSpec(CacheBuilderSpec.parse(cacheBuilderSpecification));
         return guavaCacheManager;
-    }
+    }*/
 
 
     @Bean
