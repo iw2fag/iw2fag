@@ -1,1 +1,11 @@
-This project is owned by Henry.
+The module of this project:
+
+1:core-java: module of some core java code, related to algorithm, utils class
+2:docker: As we know, for micro-services, we always have some service in common, for example: database, web server..
+So this project is used for a 'skeleton' project,
+It means: we will provide a basic micro-service skeleton for user, and they only need to be responsible the implement the
+details of they project, they can use some maven commands ro choose:
+1: which database to use, for example: postgres or mysql.
+2: which web-server to use,for example: jetty or tomcat
+3: weather want to support HA functionality. (Redis)
+4: we will also provide some generic tools configuration: for example: kafka, zookeeper

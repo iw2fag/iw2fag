@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="5 seconds">
+
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder class="ch.qos.logback.core.encoder.LayoutWrappingEncoder">
+			<layout class="com.iw2fag.lab.logging.SaaSJsonLayout">
+				<jsonFormatter class="ch.qos.logback.contrib.jackson.JacksonJsonFormatter">
+					<prettyPrint>false</prettyPrint>
+				</jsonFormatter>
+				<timestampFormat>yyyy-MM-dd' 'HH:mm:ss,SSS</timestampFormat>
+				<appendLineSeparator>true</appendLineSeparator>
+				<serviceName>Skeleton</serviceName>
+				<loggerType>Jetty</loggerType>
+			</layout>
+		</encoder>
+	</appender>
+	 
+	<appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${skeleton.home}/log/skeleton-jetty.log</file>
+		<append>true</append>
+		<encoder>
+			<pattern>[Skeleton] [Jetty] [%d] [%thread] [%level] [%logger{35}] %msg%n</pattern>
+		</encoder>
+		<rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+			<fileNamePattern>${skeleton.home}/log/skeleton-jetty-%i.log</fileNamePattern>
+			<minIndex>1</minIndex>
+			<maxIndex>2</maxIndex>
+		</rollingPolicy>
+
+		<triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+			<maxFileSize>5MB</maxFileSize>
+		</triggeringPolicy>
+	</appender>
+
+	<root level="INFO">
+		<appender-ref ref="FILE" />
+		<appender-ref ref="STDOUT" />
+	</root>
+
+</configuration>

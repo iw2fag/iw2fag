@@ -18,8 +18,8 @@ import java.util.UUID;
 public class CSRFFilter implements Filter {
     private static final Logger LOGGER = LoggerFactory.getLogger(CSRFFilter.class);
 
-    public static final String CSRF_COOKIE_NAME = "hp4msecret";
-    public static final String CSRF_HEADER_NAME = "x-hp4msecret";
+    public static final String CSRF_COOKIE_NAME = "csrfsecret";
+    public static final String CSRF_HEADER_NAME = "x-csrfsecret";
     public static final String EXCEPTION_MSG = "Cross Site Request Forgery (CSRF) Detected";
     public static final String CSRF_INIT_PARAMETER = "csrfExcludedRequests";
 

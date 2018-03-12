@@ -169,7 +169,7 @@ public class PasswordPanel {
         confirmSuperUserPwdTextField.setPreferredSize(new Dimension(200, 20));
 
         //Label
-        adminLabel.setText("<html><b>Database Administrator: </b>Can modify the HPE Mobile Center Server <br> database schema.</html>");
+        adminLabel.setText("<html><b>Database Administrator: </b>Can modify the Mobile Center Server <br> database schema.</html>");
         adminLabel.setForeground(Color.white);
         adminLabel.setFont(defaultTextFont);
         adminLabel.setPreferredSize(new Dimension(420, 40));

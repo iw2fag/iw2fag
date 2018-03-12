@@ -24,6 +24,7 @@
             <modules>
                 <module>resources-conf</module>
                 <module>logging</module>
+                <module>security</module>
             </modules>
         </profile>
 
@@ -33,17 +34,8 @@
                 <module>resources-conf</module>
                 <module>docker-db</module>
                 <module>logging</module>
+                <module>security</module>
             </modules>
-        </profile>
-
-        <profile>
-            <id>jacoco</id>
-            <modules/>
-        </profile>
-
-        <profile>
-            <id>sonar</id>
-            <modules/>
         </profile>
     </profiles>
 
