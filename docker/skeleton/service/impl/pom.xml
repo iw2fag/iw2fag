@@ -22,6 +22,12 @@
 			<version>${project.version}</version>
 		</dependency>
 
+		<dependency>
+			<groupId>com.iw2fag.lab</groupId>
+			<artifactId>security</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+
         <dependency>
             <groupId>ch.qos.logback.contrib</groupId>
             <artifactId>logback-json-classic</artifactId>

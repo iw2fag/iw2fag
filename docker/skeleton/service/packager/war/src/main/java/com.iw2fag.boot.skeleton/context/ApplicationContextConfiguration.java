@@ -13,6 +13,7 @@ import org.springframework.scheduling.annotation.EnableAsync;
 })
 @PropertySources(value = {
         @PropertySource("classpath:skeleton-db.properties"),
+        @PropertySource("classpath:skeleton-redis.properties")
 })
 @EnableAspectJAutoProxy
 @EnableCaching

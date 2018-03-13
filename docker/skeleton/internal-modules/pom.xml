@@ -25,6 +25,7 @@
                 <module>resources-conf</module>
                 <module>logging</module>
                 <module>security</module>
+                <module>redis</module>
             </modules>
         </profile>
 
@@ -35,6 +36,7 @@
                 <module>docker-db</module>
                 <module>logging</module>
                 <module>security</module>
+                <module>redis</module>
             </modules>
         </profile>
     </profiles>

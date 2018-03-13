@@ -9,6 +9,9 @@
       <sourceFolder url="file://$MODULE_DIR$/security/src.main.java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/security/src/main/resources" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/security/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/docker-db/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/redis/src/main/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/redis/src/main/java" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
     <orderEntry type="inheritedJdk" />

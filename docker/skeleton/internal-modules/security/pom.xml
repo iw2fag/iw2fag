@@ -115,28 +115,12 @@
             <artifactId>commons-codec</artifactId>
             <version>1.9</version>
         </dependency>
+        <dependency>
+            <groupId>org.eclipse.jetty</groupId>
+            <artifactId>jetty-security</artifactId>
+            <version>${jetty.version}</version>
+        </dependency>
+
     </dependencies>
-
-
-<!--    <repositories>
-        <repository>
-            <id>java.net</id>
-            <url>https://maven.java.net/content/repositories/public/</url>
-        </repository>
-        <repository>
-            <id>spring io</id>
-            <url>http://repo.spring.io/libs-milestone/</url>
-        </repository>
-        <repository>
-            <id>Codehaus Snapshots</id>
-            <url>http://snapshots.repository.codehaus.org/</url>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-            <releases>
-                <enabled>false</enabled>
-            </releases>
-        </repository>
-    </repositories>-->
 
 </project>
