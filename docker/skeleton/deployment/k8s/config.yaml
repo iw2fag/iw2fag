@@ -1,6 +1,0 @@
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: skeleton-config
-data:
-  java.options: "-Dspring.profiles.active=saas -Dfile.encoding=UTF-8 -Dskeleton.home=/usr/local/docker-resource"

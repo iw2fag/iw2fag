@@ -1,8 +1,0 @@
-${AnsiColor.BRIGHT_BLUE}
-  _________ __            .__            __
- /   _____/|  | __  ____  |  |    ____ _/  |_  ____    ____
- \_____  \ |  |/ /_/ __ \ |  |  _/ __ \\   __\/  _ \  /    \
- /        \|    < \  ___/ |  |__\  ___/ |  | (  <_> )|   |  \
-/_______  /|__|_ \ \___  >|____/ \___  >|__|  \____/ |___|  /
-        \/      \/     \/            \/                   \/
-${Ansi.GREEN} :: skeleton ${application.formatted-version} :: Running Spring Boot ${spring-boot.formatted-version} ::${Ansi.DEFAULT}
