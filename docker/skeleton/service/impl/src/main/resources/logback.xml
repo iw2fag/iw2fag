@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="5 seconds">
+	<if condition='property("spring.profiles.active").contains("saas")'>
+		<then>
+			<include file="${skeleton.home}/conf/logback-skeleton.xml"></include>
+		</then>
+		<else>
+			<include file="${skeleton.home}/conf/logback-skeleton.xml"></include>
+		</else>
+	</if>
+</configuration>
