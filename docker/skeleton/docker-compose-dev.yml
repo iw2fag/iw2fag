@@ -1,0 +1,47 @@
+version: '2'
+services:
+  db:
+    build: ./internal-modules/docker-db
+    container_name: skeleton-db
+    environment:
+      - POSTGRES_PASSWORD=password
+    expose:
+      - "5432"
+    ports:
+      - "5432:5432"
+    networks:
+      - local
+  redis:
+    image: redis:3.2.4
+    container_name: skeleton-redis
+    expose:
+      - "6379"
+    ports:
+      - "6379:6379"
+    networks:
+      - local
+  skeleton:
+    image: srf/skeleton
+    container_name: skeleton
+    expose:
+      - "8080"
+      - "8000"
+    ports:
+      - "8080:8080"
+      - "8000:8000"
+    networks:
+      - local
+    depends_on:
+      - db
+    environment:
+      - JAVA_OPTIONS=-Dspring.profiles.active=saas -Dfile.encoding=UTF-8 -Dskeleton.home=/usr/local/resource -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=8000
+      - SECURITY_SERVICE_ADDR=mocks
+      - SECURITY_SERVICE_PORT=8081
+      - DB_ADDR=db
+      - DB_PORT=5432
+    volumes:
+      - /c/Users/logs/iw2fag:/usr/local/docker-resource/log
+
+networks:
+  local:
+    driver: bridge

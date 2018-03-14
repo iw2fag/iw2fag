@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?><project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<artifactId>skeleton-service</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<description>skeleton service</description>
+
+	<parent>
+		<groupId>com.iw2fag.lab</groupId>
+		<artifactId>skeleton</artifactId>
+		<version>1.0-SNAPSHOT</version>
+	</parent>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<java.version>1.8</java.version>
+		
+		<!-- Docker -->
+		<docker.image.prefix>iw2fag-skeleton</docker.image.prefix>
+		<docker.hub.repository>iw2fag</docker.hub.repository>
+
+        <!-- Swagger -->
+		<springfox.version>2.6.1</springfox.version>
+        <swagger-annotations.version>1.5.3</swagger-annotations.version>
+		<commons-io.version>2.4</commons-io.version>
+
+	</properties>
+
+	<profiles>
+		<profile>
+			<id>default</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<modules>
+				<module>api</module>
+				<module>impl</module>
+				<module>packager</module>
+			</modules>
+		</profile>
+
+		<profile>
+			<id>docker</id>
+			<modules>
+				<module>api</module>
+				<module>impl</module>
+				<module>packager</module>
+			</modules>
+		</profile>
+
+		<profile>
+			<id>docker-service</id>
+			<modules>
+				<module>api</module>
+				<module>impl</module>
+				<module>packager</module>
+			</modules>
+		</profile>
+
+	</profiles>
+
+</project>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?><project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<artifactId>skeleton-packager-parent</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<description>skeleton PACKAGER parent</description>
+
+	<parent>
+		<groupId>com.iw2fag.lab</groupId>
+		<artifactId>skeleton-service</artifactId>
+		<version>1.0-SNAPSHOT</version>
+	</parent>
+
+	<modules>
+		<module>war</module>
+	</modules>
+
+	<profiles>
+		<profile>
+			<id>docker</id>
+			<modules>
+				<module>zip</module>
+				<module>docker</module>
+			</modules>
+		</profile>
+
+		<profile>
+			<id>docker-service</id>
+			<modules>
+				<module>docker</module>
+			</modules>
+		</profile>
+
+		<profile>
+			<id>docker-only</id>
+			<modules>
+				<module>docker</module>
+			</modules>
+		</profile>
+
+		<profile>
+			<id>zip-only</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<modules>
+				<module>zip</module>
+			</modules>
+		</profile>
+	</profiles>
+
+</project>

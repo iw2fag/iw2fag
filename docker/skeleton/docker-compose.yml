@@ -1,0 +1,31 @@
+version: '2'
+services:
+  mocks:
+    image: srf/skeleton.mock-security:latest
+    container_name: mocks-${TEST_COMPOSE_CONTAINER_SUFFIX}
+    expose:
+      - "8080"
+      - "8081"
+  db:
+    build: ./internal-modules/db-docker
+    container_name: db-docker
+    environment:
+      - POSTGRES_PASSWORD=password
+  skeleton:
+    image: srf/skeleton:latest
+    container_name: skeleton
+    expose:
+      - "8080"
+    ports:
+      - "8080"
+    links:
+      - mocks
+      - db
+    depends_on:
+      - db
+    environment:
+      - JAVA_OPTIONS=${JACOCO_OPTS} -Dspring.profiles.active=saas,test -Dfile.encoding=UTF-8 -Dskeleton.home=/usr/local/skeleton
+      - SECURITY_SERVICE_ADDR=mocks
+      - SECURITY_SERVICE_PORT=8081
+      - DB_ADDR=db
+      - DB_PORT=5432

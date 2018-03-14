@@ -1,0 +1,26 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: skeleton-deployment
+spec:
+  replicas: {{NUM_INSTANCES}}
+  template:
+    metadata:
+      annotations:
+        build_version: "{{BUILD_VERSION}}"
+        git_commit: "{{GIT_COMMIT}}"
+        branch_name: "{{BRANCH_NAME}}"
+      labels:
+        app: skeleton
+    spec:
+      imagePullSecrets:
+        - name: myregistrykey
+      containers:
+      - name: skeleton
+        image: {{REGISTRY}}/srf/skeleton:{{TAG}}
+        env:
+        - name: JAVA_OPTIONS
+          valueFrom:
+            configMapKeyRef:
+              name: skeleton-config
+              key: java.options
