@@ -26,6 +26,7 @@
                 <module>logging</module>
                 <module>security</module>
                 <module>redis</module>
+                <module>mq</module>
             </modules>
         </profile>
 
@@ -33,10 +34,11 @@
             <id>docker</id>
             <modules>
                 <module>resources-conf</module>
-                <module>docker-db</module>
+                <module>db</module>
                 <module>logging</module>
                 <module>security</module>
                 <module>redis</module>
+                <module>mq</module>
             </modules>
         </profile>
     </profiles>
