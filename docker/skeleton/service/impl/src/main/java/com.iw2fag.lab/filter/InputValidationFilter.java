@@ -1,13 +1,5 @@
 package com.iw2fag.lab.filter;
 
-/**
- * Created with IntelliJ IDEA.
- * User: davidofv
- * Date: 01/03/15
- * Time: 14:36
- * To change this template use File | Settings | File Templates.
- */
-
 import com.iw2fag.lab.common.ServerLoggers;
 import org.owasp.esapi.errors.IntrusionException;
 import org.slf4j.Logger;
