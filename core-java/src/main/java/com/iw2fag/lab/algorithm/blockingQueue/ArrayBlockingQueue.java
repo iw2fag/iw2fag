@@ -82,31 +82,4 @@ public class ArrayBlockingQueue<E> {
         return getValue;
     }
 
-
-    public static void main(String[] args) {
-
-        final ArrayBlockingQueue queue = new ArrayBlockingQueue<String>(20);
-
-
-        for (int i = 0; i < 100; i++) {
-            new Thread() {
-                @Override
-                public void run() {
-                    queue.produce(Thread.currentThread().getName());
-                }
-            }.start();
-        }
-        for (int i = 0; i < 100; i++) {
-
-            new Thread() {
-                @Override
-                public void run() {
-                    queue.consume();
-                }
-            }.start();
-
-        }
-    }
-
-
 }
