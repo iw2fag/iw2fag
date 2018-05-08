@@ -164,6 +164,35 @@ public class BST {
         return root;
     }
 
+    public boolean isValidBST(Node root) {
+        return isValidBST(root, Integer.MIN_VALUE, Integer.MAX_VALUE);
+    }
+
+    private boolean isValidBST(Node root, int min, int max) {
+
+        if (root == null) {
+            return true;
+        }
+
+        if (root.value < min || root.value > max) {
+            return false;
+        }
+
+        return isValidBST(root.left, min, root.value) && isValidBST(root, root.value, max);
+    }
+
+    public int getDepth(Node root) {
+
+        if (root == null) {
+            return 0;
+        }
+
+        int m = getDepth(root.left) + 1;
+        int n = getDepth(root.right) + 1;
+
+        return m > n ? m : n;
+    }
+
 
     public Node getRoot() {
         return this.root;
