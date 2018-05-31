@@ -24,52 +24,6 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
 
-/**
- * Redirects incoming TCP connections to other hosts/ports. All redirections are defined in a file as for example
- * <pre>
- * 127.0.0.1:8888=www.ibm.com:80
- * localhost:80=pop.mail.yahoo.com:110
- * </pre>
- * The first line forwards all requests to port 8888 on to www.ibm.com at port 80 (it also forwards the HTTP
- * response back to the sender. The second line essentially provides a POP-3 service on port 8110, using
- * Yahoo's POP service. This is neat when you're behind a firewall and one of the few services in the outside
- * world that are not blocked is port 80 (HHTP).<br/>
- * Note that JDK 1.4 is required for this class. Also, concurrent.jar has to be on the classpath. Note that
- * you also need to include jsse.jar/jce.jar (same location as rt.jar) if you want SSL sockets.<br>
- * To create SSLServerSockets you'll need to do the following:
- * Generate a certificate as follows:
- * <pre>
- * keytool -genkey -keystore /home/bela/.keystore -keyalg rsa -alias bela -storepass <passwd> -keypass <passwd>
- * </pre>
- * <p/>
- * Start the Proxy as follows:
- * <pre>
- * java -Djavax.net.ssl.keyStore=/home/bela/.keystore -Djavax.net.ssl.keyStorePassword=<passwd>
- *      -Djavax.net.ssl.trustStore=/home/bela/.keystore -Djavax.net.ssl.trustStorePassword=<passwd>
- *      org.jgroups.util.Proxy -file /home/bela/map.properties
- * </pre>
- * Start client as follows:
- * <pre>
- * java -Djavax.net.ssl.trustStore=/home/bela/.keystore -Djavax.net.ssl.trustStorePassword=<passwd> sslclient
- * </pre>
- * <br/>
- * To import a certificate into the keystore, use the following steps:
- * <pre>
- * openssl x509 -in server.crt -out server.crt.der -outform DER
- * keytool -import -trustcacerts -alias <your alias name> -file server.crt.der
- * </pre>
- * This will store the server's certificate in the ${user.home}/.keystore key store.
- * <br/>
- * Note that an SSL client or server can be debugged by starting it as follows:
- * <pre>-Djava.protocol.handler.pkgs=com.sun.net.ssl.internal.www.protocol -Djavax.net.debug=ssl</pre>
- * <br/>
- * If you run a web browser, simply enter https://<host>:<port> as URL to connect to an SSLServerSocket
- * <br/>Note that we cannot use JDK 1.4's selectors for SSL sockets, as
- * getChannel() on an SSL socket doesn't seem to work.
- *
- * @author Bela Ban
- * @todo Check whether SSLSocket.getChannel() or SSLServerSocket.getChannel() works.
- */
 public class Proxy {
 
     InetAddress local = null, remote = null;
