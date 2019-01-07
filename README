@@ -1,9 +1,0 @@
-The module of iw2fag:
-
-core-java: module of some core java code, related to algorithm, utils class
-docker:
-Brief Introduction:
-As we know, for micro service, we always have some services in common, for example: security, database, web server..
-So this project is used for a 'skeleton' project,
-It means: we will provide a basic micro-service skeleton for user, we provide some basic and generic configuration,
-and user only need to be care about the business logic.
